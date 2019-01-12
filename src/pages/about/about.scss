@@ -1,0 +1,61 @@
+page-about {
+
+}
+
+
+
+.swiper-slide img {
+        max-width: 100%;
+        height: 45px;
+        width: 57px;
+}
+.swiper-container {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        width: 121%;
+        height: 100%;
+}
+.logo-text {
+  color: white;
+  font-size: 10px;
+}
+ion-fab[bottom][edge] {
+        bottom: 10px;
+}
+
+ion-app.md [padding] {
+        padding: 5px;
+}
+
+ion-app.md [padding] .scroll-content {
+        //padding: 5px;
+}
+
+.mycanvas {             
+  margin-top: -10px !important;
+  margin-left: 0px !important;
+}
+
+
+.md .tabs .tabbar {
+  display:none !important;
+}
+
+.custom-header {
+  top: 79% !important;
+}
+
+ion-fab[top][edge] {
+  top: 0px !important;
+}
+
+#oviya {
+  margin: 0px auto;
+}

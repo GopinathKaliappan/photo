@@ -1,0 +1,7 @@
+{
+  "name": "Image Editor",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

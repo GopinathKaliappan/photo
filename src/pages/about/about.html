@@ -1,0 +1,63 @@
+<ion-header color="fantacy" *ngIf="selectedCategory !== ''" class="custom-header">
+    <ion-toolbar color="secondary">
+        <ion-row class="filters">
+            <ion-col no-padding col-10>
+                <ion-slides slidesPerView="5" no-padding>
+                    <ion-slide *ngFor="let logo of images.data"  no-padding>
+                        <button *ngIf="logo === 0"  ion-fab color="assertive" ><ion-icon name="md-photos"></ion-icon></button>
+                        <img 
+                          *ngIf="logo !== 0"
+                          src={{url}}{{selectedCategory}}{{slash}}{{logo}}{{type}}
+                          crossorigin="anonymous"
+                          class="sliding-image"
+                          (click)="addLogo(logo)"
+                        />
+                    </ion-slide>                   
+                </ion-slides>
+            </ion-col>
+        </ion-row>
+
+    </ion-toolbar>
+</ion-header>
+  <ion-content padding color="lightpink">
+  <ion-fab bottom left edge *ngIf="canvas.getActiveObject()">
+      <button ion-fab color="danger" (click)="deleteItem()"><ion-icon name="ios-remove-circle-outline" ></ion-icon></button>
+  </ion-fab>
+  <ion-fab top right edge>
+      <button ion-fab color="sexypink" (click)="shareImage()"><ion-icon name="md-share" ></ion-icon></button>
+    </ion-fab>
+
+    <ion-fab right bottom color="sexypink">
+      <button ion-fab color="primary" ><ion-icon name="md-photos"></ion-icon></button>
+      <ion-fab-list side="left">
+        <button ion-fab color="assertive" (click)="pickImage('backgroundImage')"><ion-icon name="md-photos"></ion-icon></button>
+        <button (click)="captureImage('image')" ion-fab color="assertive"><ion-icon  name="md-camera"></ion-icon></button>
+        <button ion-fab (click)="captureImage('backgroundImage')" color="assertive"><ion-icon name="md-camera" ></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>
+        <div style="display:table;width:100%;">
+          <div style="display:table-cell;vertical-align:middle;width:100%">
+          <canvas id="oviya" class="mycanvas">
+          </canvas>
+          </div>
+        </div>
+  </ion-content>
+<ion-footer>
+<ion-toolbar color="sexypink">
+        <ion-row class="filters">
+            <ion-col no-padding col-10>
+                <ion-slides *ngIf="images.data.length" slidesPerView="5" no-padding>
+                    <ion-slide *ngFor="let logo of images.items"  no-padding>
+                        <img 
+                          src={{parentUrl}}{{logo}}{{type}}
+                          crossorigin="anonymous"
+                          class="sliding-image"
+                          (click)="changeCategory(logo)"
+                        />
+                        <div class="logo-text">{{logo}}</div>
+                    </ion-slide>                   
+                </ion-slides>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>
